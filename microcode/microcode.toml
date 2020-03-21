@@ -1,0 +1,138 @@
+t_step_count = 4
+load_command = [
+    ["CO", "MI"],
+    ["RO", "II", "CE"]
+]
+step_bits = 3
+opcode_bits = 4
+roms = ["A", "B"]
+
+[control_word]
+    
+    [control_word.halt]
+    name = "Halt"
+    abr = "HLT"
+    rom = "A"
+    position = 0
+
+    [control_word.memory_in]
+    name = "Memory In"
+    abr = "MI"
+    rom = "A"
+    position = 1
+
+    [control_word.ram_in]
+    name = "Ram In"
+    abr = "RI"
+    rom = "A"
+    position = 2
+    
+    [control_word.ram_out]
+    name = "Ram Out"
+    abr = "RO"
+    rom = "A"
+    position = 3
+
+    [control_word.instruction_out]
+    name = "Instruction OUT"
+    abr = "IO"
+    rom = "A"
+    position = 4
+
+    [control_word.instruction_in]
+    name = "Instruction In"
+    abr = "II"
+    rom = "A"
+    position = 5
+    
+
+    [control_word.a_in]
+    name = "A In"
+    abr = "AI"
+    rom = "A"
+    position = 6
+
+    [control_word.a_out]
+    name = "A Out"
+    abr = "AO"
+    rom = "A"
+    position = 7
+
+    [control_word.sum_out]
+    name = "Sum Out"
+    abr = "SO"
+    rom = "B"
+    position = 0
+
+    [control_word.subtract]
+    name = "Subtract"
+    abr = "SU"
+    rom = "B"
+    position = 1
+    
+    [control_word.b_in]
+    name = "B In"
+    abr = "BI"
+    rom = "B"
+    position = 2
+
+    [control_word.output_in]
+    name = "Output In"
+    abr = "OI"
+    rom = "B"
+    position = 3
+
+    [control_word.counter_enable]
+    name = "Counter Enable"
+    abr = "CE"
+    rom = "B"
+    position = 4
+
+    [control_word.counter_out]
+    name = "Counter Out"
+    abr = "CO"
+    rom = "B"
+    position = 5
+
+    [control_word.jump]
+    name = "Jump"
+    abr = "J"
+    rom = "B"
+    position = 6
+
+[opcodes]
+
+    [opcodes.load_A]
+    name = "Load A"
+    abr = "LDA"
+    opcode = 1
+    t_steps = [
+        ["IO", "MI"],
+        ["RO", "AI"]
+    ]
+
+    [opcodes.add]
+    name = "Add"
+    abr = "ADD"
+    opcode = 3
+    t_steps = [
+        ["IO", "MI"],
+        ["RO", "BI"],
+        ["SO", "AI"]
+    ]
+
+    [opcodes.out]
+    name = "Output"
+    abr = "OUT"
+    opcode = 14
+    t_steps = [
+        ["AO", "OI"]
+    ]
+
+    [opcodes.halt]
+    name = "Halt"
+    abr = "HLT"
+    opcode = 15
+    t_steps = [
+        ["HLT"]
+    ]
