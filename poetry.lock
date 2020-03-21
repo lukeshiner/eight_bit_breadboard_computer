@@ -134,6 +134,7 @@ pyserial = "^3.4"
 reference = "d97962abafa2ed1d72969bc03a5992cb73368a0f"
 type = "git"
 url = "https://github.com/lukeshiner/eeprom.git"
+
 [[package]]
 category = "main"
 description = "Discover and load entry points from installed packages."
@@ -368,7 +369,7 @@ python-versions = "*"
 version = "2.0.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Python Library for Tom's Obvious, Minimal Language"
 name = "toml"
 optional = false
@@ -405,7 +406,7 @@ python-versions = "*"
 version = "0.1.8"
 
 [metadata]
-content-hash = "a0b42318fb08b34963a2659269ea4c03b3824d961e68975ff8925cda74042737"
+content-hash = "a29ded436ee3460a5b41b9112edb59cbfce671f52291ab206580673f7bee09a5"
 python-versions = "^3.8"
 
 [metadata.files]
